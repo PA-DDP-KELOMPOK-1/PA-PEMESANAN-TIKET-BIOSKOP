@@ -50,26 +50,38 @@ def registrasi():
 def tambah_film():
     nama_film = input("Masukkan Nama Film: ")
     rating_film = input("Masukkan Rating Film: ")
-    harga_tiket = int(input("Masukkan Harga Tiket: Rp."))
-    kursi_tersedia = int(input("Masukkan jumlah kursi yang tersedia: "))
-    found = False  # Digunakan untuk melakukan pengecekan apakah nama film ada atau tidak
 
+    while True:
+        try:
+            harga_tiket = int(input("Masukkan Harga Tiket: Rp."))
+            break
+        except ValueError:
+            print("Harga tiket harus berupa angka")
+
+    while True:
+        try:
+            kursi_tersedia = int(input("Masukkan jumlah kursi yang tersedia: "))
+            break
+        except ValueError:
+            print("Jumlah kursi harus berupa angka")
+
+    found = False
     try:
-        with open(file_film, mode='r') as file:
+        with open(file_film, mode='r') as file:    # Melakukan pengecekan untuk nama film
             csv_reader = csv.reader(file)
             for row in csv_reader:
                 if row[0] == nama_film:
-                    found = True  # Jika nama film sudah ada didalam penyimpanan maka tidak bisa menambahkan film
+                    found = True
                     print(f"Film {nama_film} sudah ada!")
                     return
 
         if not found:
-            with open(file_film, mode='a', newline='') as file:  # Jika nama film belum ada maka film akan ditambahkan dan disimpan dalam penyimpanan yang digunakan
+            with open(file_film, mode='a', newline='') as file:    # Jika nama film tidak ada dalam penyimpanan maka akan menambahkan film ke penyimpanan
                 csv_writer = csv.writer(file)
                 csv_writer.writerow([nama_film, rating_film, harga_tiket])
             print(f"Film {nama_film} berhasil ditambahkan.")
 
-        with open(file_kursi, mode='a', newline='') as file:  # Otomatis menambahkan kursi jika berhasil menambahkan film
+        with open(file_kursi, mode='a', newline='') as file:    # Menambahkan kursi dari film yang ditambahkan
             csv_writer = csv.writer(file)
             for kursi in range(1, kursi_tersedia + 1):
                 csv_writer.writerow([nama_film, f"{kursi}", "tersedia"])
@@ -106,20 +118,26 @@ def daftar_film():
 6.  Membuat function untuk mengupdate sebuah film yang ada didalam penyimpanan
 ``` ruby
 def update_film():
-    daftar_film()  # Menampilkan daftar film yang tersedia di penyimpanan
+    daftar_film()
     nama_film = input("Film yang ingin diubah: ")
     rating_film = input("Rating film: ")
-    harga_tiket = int(input("Harga tiket: Rp."))
+
+    while True:
+        try:
+            harga_tiket = int(input("Harga tiket: Rp."))
+            break
+        except ValueError:
+            print("Harga tiket harus berupa angka")
 
     updated_rows = []
     found = False
 
-    with open(file_film, mode='r') as file:
+    with open(file_film, mode='r') as file:    # Melakukan pengecekan film didalam penyimpanan
         csv_reader = csv.reader(file)
         for row in csv_reader:
             if row[0] == nama_film:
                 updated_rows.append([nama_film, rating_film, harga_tiket])
-                found = True  # Melakukan pengecekan jika nama film ada didalam penyimpanan
+                found = True
                 print(f"Film {nama_film} berhasil diperbarui")
             else:
                 updated_rows.append(row)
@@ -136,53 +154,70 @@ def update_film():
 7.  Membuat function untuk menghapus film yang ingin dihapus dari penyimpanan
 ``` ruby
 def hapus_film():
-    daftar_film()
+    daftar_film()    # Menampilkan daftar film yang ada di penyimpanan
     nama_film = input("Nama film yang ingin dihapus: ")
-
     updated_rows = []
     found = False
-
-    with open(file_film, mode='r') as file:
+    with open(file_film, mode='r') as file:    # Melakukan pengecekan data film
         csv_reader = list(csv.reader(file))
         for row in csv_reader:
             if row[0] == nama_film:
-                found = True
+                found = True    # Jika film ada dalam penyimpanan
                 print(f"Film {nama_film} berhasil dihapus")
             else:
                 updated_rows.append(row)
-            
-        if not found:
-            print(f"Film tidak ada dalam data")
-            return
-            
-        with open(file_film, mode='w', newline='') as file:
-            csv_writer = csv.writer(file)
-            csv_writer.writerows(updated_rows)
+
+    if not found:    # Jika film tidak ada dalam penyimpanan
+        print(f"Film tidak ada dalam data")
+        return
+
+    with open(file_film, mode='w', newline='') as file:    # Menghapus film
+        csv_writer = csv.writer(file)
+        csv_writer.writerows(updated_rows)
+
+    updated_kursi_rows = []
+    with open(file_kursi, mode='r') as file:
+        kursi_reader = csv.reader(file)
+        for row in kursi_reader:
+            if row[0].lower() != nama_film.lower():
+                updated_kursi_rows.append(row)
+
+    with open(file_kursi, mode='w', newline='') as file:    # Menghapus kursi dari film yang dihapus juga
+        csv_writer = csv.writer(file)
+        csv_writer.writerows(updated_kursi_rows)
+
+    print(f"Kursi untuk film {nama_film} berhasil dihapus.")
 ```
 
 8.  Membuat function untuk menambahkan saldo user yang ingin dipilih
 ``` ruby
 def tambah_saldo():
-    nama = input("Masukkan nama user: ")  # Menginput nama user
-    password = pwinput.pwinput(prompt="Masukkan Password: ")  # Menginput password user
-    saldo_baru = int(input("Masukkan jumlah saldo yang ingin ditambahkan: Rp."))  # Menginput jumlah saldo yang ingin diisi
+    nama = input("Masukkan nama user: ")
+    password = pwinput.pwinput(prompt="Masukkan Password: ")
+
+    while True:
+        try:
+            saldo_baru = int(input("Masukkan jumlah saldo yang ingin ditambahkan: Rp."))
+            break
+        except ValueError:
+            print("Saldo harus berupa angka")
 
     updated_rows = []
     found = False
 
-    with open(file_data, mode='r') as file:
+    with open(file_data, mode='r') as file:    # Melakukan pengecekan data user di penyimpanan
         csv_reader = csv.reader(file)
         for row in csv_reader:
-            if row[0] == nama and row[1] == password:  # Melakukan pengecekan nama dan password dari user, jika nama dan password benar maka melakukan pengupdatean saldo sesuai yang diinput
+            if row[0] == nama and row[1] == password:
                 saldo_lama = int(row[3])
                 saldo_total = saldo_lama + saldo_baru
                 updated_rows.append([nama, password, 'user', saldo_total])
-                found = True
+                found = True    # Jika data tersedia maka akan menambahkan saldo
                 print(f"Saldo {nama} berhasil ditambahkan. Saldo sekarang: Rp.{saldo_total}")
             else:
                 updated_rows.append(row)
 
-    if not found:
+    if not found:    # Jika data tida ditemukan maka akan kembali ke menu awal
         print(f"User {nama} tidak ditemukan")
         return
 
