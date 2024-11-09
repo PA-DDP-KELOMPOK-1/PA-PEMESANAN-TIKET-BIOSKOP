@@ -9,15 +9,19 @@
 
 ``` FLOWCHART MENU AWAL```
 
+![Tampilan awal drawio](https://github.com/user-attachments/assets/edc6f805-05f5-4797-8b06-a1a287ce89ec)
 
 ``` FLOWCHART MENU ADMIN 1 SAMPAI 3```
+![Tampilan admin 1 drawio](https://github.com/user-attachments/assets/c2174036-2fa9-42f2-927b-1a03b32e0014)
 
 ``` FLOWCHART MENU ADMIN 4 SAMPAI 6```
-
+![Tampilan Admin 2 drawio](https://github.com/user-attachments/assets/6dcf89ad-46e1-402f-a9f3-ced0ba07ef16)
 
 ``` FLOWCHART MENU USER 1 SAMPAI 3```
+![Tampilan User 1 drawio](https://github.com/user-attachments/assets/ac98b44a-117f-4aab-ae59-251ecc323e00)
 
 ``` FLOWCHART MENU USER 4 SAMPAI 6```
+![Tampilan User 2 drawio](https://github.com/user-attachments/assets/0ed2a8c2-eddd-4066-bcb6-2f6e582f5da1)
 
 1.  Mengimport modul library yang akan digunakan dalam program ini
 ``` ruby
