@@ -559,3 +559,290 @@ if __name__ == "__main__":
 ```
 
 ``` OUTPUT ```
+1. Menu Utama
+Pada saat pertama kali program dijalankan, sistem akan menampilkan menu utama yang memungkinkan pengguna untuk memilih opsi sebagai berikut
+``` ruby
++----+----------+
+| No | Pilihan  |
++----+----------+
+| 1  |  Login   |
+| 2  | Register |
+| 3  |   Exit   |
++----+----------+
+```
+1.1 Opsi 1 (Login): Pengguna dapat memilih untuk login dengan memasukkan username dan password.
+``` ruby
+Silahkan pilih opsi: 1
+Masukkan username: zia
+Masukkan password: ***
+Login berhasil, Selamat datang zia
+```
+1.2 Opsi 2 (Register): Pengguna yang belum terdaftar bisa memilih untuk melakukan registrasi dengan memasukkan nama dan password.
+``` ruby
+Silahkan pilih opsi: 2
+Masukkan nama: Fauzia
+Masukkan password anda: ***
+Halo Fauzia, Sudah berhasil registrasi, Silahkan login yaaa!!!!
+```
+1.3 Opsi 3 (Exit): Untuk keluar dari program.
+``` ruby
+Silahkan pilih opsi: 3
+Terimakasih telah menggunakan program kami, Berkunjung lagi lain kali yaaaa!
+```
+2. Menu Admin
+Setelah login sebagai admin, menu admin akan ditampilkan sebagai berikut:
+``` ruby
++----+-------------------+
+| No |        Opsi       |
++----+-------------------+
+| 1  |    Tambah Film    |
+| 2  | Lihat Daftar Film |
+| 3  |    Update film    |
+| 4  |     Hapus film    |
+| 5  |    Topup saldo    |
+| 6  |       Logout      |
++----+-------------------+
+```
+2.1 Tambah Film
+Opsi 1 (Tambah film): Admin dapat menambahkan film baru dengan input nama film, rating film, dan harga tiket. Jika telah berhasil bertambah maka data film dan data kursi akan terupdate otomatis bersamaan di csv.
+``` ruby
+Pilih opsi: 1
+Masukkan Nama Film: Moana
+Masukkan Rating Film: 4.7
+Masukkan Harga Tiket: Rp.50000
+Masukkan jumlah kursi yang tersedia: 10
+Film Moana berhasil ditambahkan.
+Kursi untuk film Moana berhasil ditambahkan
+```
+2.2 Lihat Daftar Film
+Opsi 2 (Lihat Daftar Film): Admin dapat melihat data film yang tersedia.
+Film yang tersedia saat ini
+``` ruby
++--------------------------+--------+-------+
+|           Film           | Rating | Harga |
++--------------------------+--------+-------+
+|       Finding Atha       |  4.9   | 50000 |
+|      Loren in Paris      |  4.8   | 50000 |
+|       Gossip Girl        |  4.9   | 60000 |
+| How to train Grandmother |  4.8   | 50000 |
+|       Tom and Budi       |  4.9   | 50000 |
+|        Shafa 1990        |  4.8   | 50000 |
+|         Zootopia         |  4.6   | 45000 |
+|        Toy Story         |  4.8   | 50000 |
+|         Radatuli         |  4.8   | 50000 |
+|          Moana           |  4.7   | 50000 |
++--------------------------+--------+-------+
+```
+2.3 Update Film
+Opsi 3 (Update Film): Admin dapat mengupdate film dengan mengubah rating dan harga tiket.
+``` ruby
+Pilih opsi: 3
+Film yang tersedia saat ini
++--------------------------+--------+-------+
+|           Film           | Rating | Harga |
++--------------------------+--------+-------+
+|       Finding Atha       |  4.9   | 50000 |
+|      Loren in Paris      |  4.8   | 50000 |
+|       Gossip Girl        |  4.9   | 60000 |
+| How to train Grandmother |  4.8   | 50000 |
+|       Tom and Budi       |  4.9   | 50000 |
+|        Shafa 1990        |  4.8   | 50000 |
+|         Zootopia         |  4.6   | 45000 |
+|        Toy Story         |  4.8   | 50000 |
+|         Radatuli         |  4.8   | 50000 |
+|          Moana           |  4.7   | 50000 |
++--------------------------+--------+-------+
+Film yang ingin diubah: Zootopia
+Rating film: 4.7
+Harga tiket: Rp.50000 
+Film Zootopia berhasil diperbarui
+```
+2.4 Hapus Film
+Opsi 4 (Hapus Film): Admin dapat menghapus film dengan menginput nama film yang ingin dihapus.
+``` ruby
+Pilih opsi: 4
+Film yang tersedia saat ini
++--------------------------+--------+-------+
+|           Film           | Rating | Harga |
++--------------------------+--------+-------+
+|       Finding Atha       |  4.9   | 50000 |
+|      Loren in Paris      |  4.8   | 50000 |
+|       Gossip Girl        |  4.9   | 60000 |
+| How to train Grandmother |  4.8   | 50000 |
+|       Tom and Budi       |  4.9   | 50000 |
+|        Shafa 1990        |  4.8   | 50000 |
+|         Zootopia         |  4.7   | 50000 |
+|        Toy Story         |  4.8   | 50000 |
+|         Radatuli         |  4.8   | 50000 |
+|          Moana           |  4.7   | 50000 |
++--------------------------+--------+-------+
+Nama film yang ingin dihapus: Gossip Girl
+Film Gossip Girl berhasil dihapus
+Kursi untuk film Gossip Girl berhasil dihapus.
+```
+2.5 Topup Saldo
+Opsi 5 (Topup Saldo): Topup saldo hanya dapat dilakukan melalui admin dengan menginput nama user dan pass user.
+``` ruby
+Pilih opsi: 5
+Masukkan nama user: Fauzia
+Masukkan Password: ***
+Masukkan jumlah saldo yang ingin ditambahkan: Rp.350000
+Saldo Fauzia berhasil ditambahkan. Saldo sekarang: Rp.350000
+```
+2.6 Logout
+``` ruby
+Opsi 5 (Topup Saldo): Akan keluar dari menu admin dan kembali ke menu awal.
+Pilih opsi: 6
+Logout Berhasil!
++----+----------+
+| No | Pilihan  |
++----+----------+
+| 1  |  Login   |
+| 2  | Register |
+| 3  |   Exit   |
++----+----------+
+```
+3. Menu User
+Setelah login sebagai user, menu user akan ditampilkan sebagai berikut:
+``` ruby
++----+-------------------+
+| No |        Opsi       |
++----+-------------------+
+| 1  | Lihat daftar film |
+| 2  |    Search film    |
+| 3  |    Sorting film   |
+| 4  |    Pesan tiket    |
+| 5  |    Lihat Saldo    |
+| 6  |       Logout      |
++----+-------------------+
+```
+3.1 Lihat daftar film
+Opsi 1 (Lihat daftar film): User dapat melihat daftar film yang tersedia.
+``` ruby
+Pilih opsi: 1
+
+Film yang tersedia saat ini
++--------------------------+--------+-------+
+|           Film           | Rating | Harga |
++--------------------------+--------+-------+
+|       Finding Atha       |  4.9   | 50000 |
+|      Loren in Paris      |  4.8   | 50000 |
+| How to train Grandmother |  4.8   | 50000 |
+|       Tom and Budi       |  4.9   | 50000 |
+|        Shafa 1990        |  4.8   | 50000 |
+|         Zootopia         |  4.7   | 50000 |
+|        Toy Story         |  4.8   | 50000 |
+|         Radatuli         |  4.8   | 50000 |
+|          Moana           |  4.7   | 50000 |
++--------------------------+--------+-------+
+```
+3.2 Search Film
+Opsi 2 (Search film): User dapat mencari film yang mau dilihat.
+``` ruby
+Ingin mencari film apa: Finding
+Hasil pencarian film:
++--------------+--------+-------+
+|     Film     | Rating | Harga |
++--------------+--------+-------+
+| Finding Atha |  4.9   | 50000 |
++--------------+--------+-------+
+``` 
+3.3 Sorting FIlm
+Opsi 3 (Sorting Film): Pada fitur ini user dapat memilih pengurutan film dari A-Z atau Z-A.
+``` ruby
+
+Pilih opsi: 3
++----+--------------+
+| No | Urutkan dari |
++----+--------------+
+| 1  |   Dari Z-A   |
+| 2  |   Dari A-Z   |
++----+--------------+
+Pilih cara pengurutan (1/2): 1
+Hasil pengurutan film:
++--------------------------+--------+-------+
+|           Nama           | Rating | Harga |
++--------------------------+--------+-------+
+|         Zootopia         |  4.7   | 50000 |
+|        Toy Story         |  4.8   | 50000 |
+|       Tom and Budi       |  4.9   | 50000 |
+|        Shafa 1990        |  4.8   | 50000 |
+|         Radatuli         |  4.8   | 50000 |
+|          Moana           |  4.7   | 50000 |
+|      Loren in Paris      |  4.8   | 50000 |
+| How to train Grandmother |  4.8   | 50000 |
+|       Finding Atha       |  4.9   | 50000 |
++--------------------------+--------+-------+
+
+Pilih opsi: 3
++----+--------------+
+| No | Urutkan dari |
++----+--------------+
+| 1  |   Dari Z-A   |
+| 2  |   Dari A-Z   |
++----+--------------+
+Pilih cara pengurutan (1/2): 2
+Hasil pengurutan film:
++--------------------------+--------+-------+
+|           Nama           | Rating | Harga |
++--------------------------+--------+-------+
+|       Finding Atha       |  4.9   | 50000 |
+| How to train Grandmother |  4.8   | 50000 |
+|      Loren in Paris      |  4.8   | 50000 |
+|          Moana           |  4.7   | 50000 |
+|         Radatuli         |  4.8   | 50000 |
+|        Shafa 1990        |  4.8   | 50000 |
+|       Tom and Budi       |  4.9   | 50000 |
+|        Toy Story         |  4.8   | 50000 |
+|         Zootopia         |  4.7   | 50000 |
++--------------------------+--------+-------+
+```
+3.4 Lihat Saldo
+Opsi 4 (Pesan tiket): User dapat memesan tiket dengan menginput nama film yang ingin dipesan, lalu input nama user sebagai pemesan. Lalu akan ditampilkan nomor dan jumlah kursi yang tesedia,  lalu user diperintah untuk masukkan jumlah tiket yang akan dipesan lalu masukkan nomor kursi yang dipilih. Setelah tiket terpesan invoice pembelian tiket akan diberikan.
+``` ruby
+Pilih opsi: 4
+
+Film yang tersedia saat ini
++--------------------------+--------+-------+
+|           Film           | Rating | Harga |
++--------------------------+--------+-------+
+|       Finding Atha       |  4.9   | 50000 |
+|      Loren in Paris      |  4.8   | 50000 |
+| How to train Grandmother |  4.8   | 50000 |
+|       Tom and Budi       |  4.9   | 50000 |
+|        Shafa 1990        |  4.8   | 50000 |
+|         Zootopia         |  4.7   | 50000 |
+|        Toy Story         |  4.8   | 50000 |
+|         Radatuli         |  4.8   | 50000 |
+|          Moana           |  4.7   | 50000 |
++--------------------------+--------+-------+
+Masukkan nama film yang ingin dipesan: Moana
+Masukkan nama pengguna: Fauzia
+Kursi yang tersedia untuk film 'Moana':
+1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+Jumlah kursi tersedia: 10
+Masukkan jumlah tiket yang ingin dipesan: 3 
+Masukkan nomor kursi ke-1 yang ingin dipesan (misal: 1): 1
+Masukkan nomor kursi ke-2 yang ingin dipesan (misal: 1): 3
+Masukkan nomor kursi ke-3 yang ingin dipesan (misal: 1): 5
+Tiket untuk film 'Moana' sebanyak 3 tiket telah berhasil dipesan. Kursi: 1, 3, 5
+==================== Tiket Bioskop =====================
+Nama Pemesan           : Fauzia
+Metode Pembayaran      : E-money
+Film                   : Moana
+Jumlah Tiket           : 3
+Kursi                  : 1, 3, 5
+Waktu Pemesanan        : 2024-11-09 17:32:24
+Total Harga Tiket      : Rp 150000
+==========================================================
+Sisa saldo E-money     : Rp 200000
+```
+3.5 Lihat Saldo
+Opsi 5 (Lihat Saldo): User dapat melihat saldo emoney setelah atau sebelum memesann tiket.
+``` ruby
+Pilih opsi: 5
+Masukkan nama user: Fauzia
+Saldo Anda saat ini: Rp.200000
+```
+3.6 Logout
+Opsi 6 (Logout): Akan keluar dari menu user dan kembali ke menu awal.
