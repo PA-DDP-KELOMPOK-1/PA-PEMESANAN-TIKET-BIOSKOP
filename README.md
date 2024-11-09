@@ -846,3 +846,7 @@ Saldo Anda saat ini: Rp.200000
 ```
 3.6 Logout
 Opsi 6 (Logout): Akan keluar dari menu user dan kembali ke menu awal.
+``` ruby
+Pilih opsi: 6
+Logout berhasil
+```
