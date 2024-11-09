@@ -10,10 +10,14 @@
 ``` FLOWCHART MENU AWAL```
 
 
-``` FLOWCHART MENU ADMIN```
+``` FLOWCHART MENU ADMIN 1 SAMPAI 3```
+
+``` FLOWCHART MENU ADMIN 4 SAMPAI 6```
 
 
-``` FLOWCHART MENU USER```
+``` FLOWCHART MENU USER 1 SAMPAI 3```
+
+``` FLOWCHART MENU USER 4 SAMPAI 6```
 
 1.  Mengimport modul library yang akan digunakan dalam program ini
 ``` ruby
