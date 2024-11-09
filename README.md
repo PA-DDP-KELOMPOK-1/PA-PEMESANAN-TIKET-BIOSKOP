@@ -7,6 +7,14 @@ KELOMPOK 1
 
 ```  Daffa Syahrandy Husain     2409116069  ```
 
+``` FLOWCHART MENU AWAL```
+
+
+``` FLOWCHART MENU ADMIN```
+
+
+``` FLOWCHART MENU USER```
+
 1.  Mengimport modul library yang akan digunakan dalam program ini
 ``` ruby
 import csv  # CSV digunakan untuk menyimpan data 
